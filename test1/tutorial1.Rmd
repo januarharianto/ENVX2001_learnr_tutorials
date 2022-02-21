@@ -17,14 +17,13 @@ knitr::opts_chunk$set(echo = FALSE)
 ### Outline
 
 
-Welcome to Tutorial 1. In this tutorial we will show you:
+Welcome to Tutorial 1. In this tutorial we will show you how to:
 
-- How to set up a project in RStudio
-- Create and R Markdown file on RStudio
-- Perform quick exploratory analysis in R
+1. Set up a project in RStudio;
+2. Create and R Markdown file on RStudio; and
+3. Work with data in R
 
-It is highly recommended that you complete this tutorial before this week's Lab.
-
+Click on "Next Topic" to continue.
 
 ## Setting up a project in RStudio
 
@@ -32,7 +31,7 @@ Organise yourself for ENVX2001 by creating an ENVX2001 project (`.Rproj` extensi
 
 ### Step 1
 
-Select `File` > `New Project...` from the menu bar that is at the top of your screen (macOS) or the top of RStudio.
+Select `File` > `New Project...` from the menu bar that is at the top of your screen (macOS) or the top of the RStudio windows (PC/Linux).
 
 
 ![](images/filenewproject.png)
@@ -45,27 +44,68 @@ Create project by selecting a `New Directory`. You may also use an `Existing Dir
 
 ### Step 3
 
-In the next window, Sst `Directory name` to "ENVX2001" or similar, and click on `Browse` to select the folder where this folder will reside, e.g. the Desktop. Click on `Create Project` when ready.
+In the next window, set `Directory name` to "ENVX2001" or similar, and click on `Browse` to select the folder where this folder will reside, e.g. the Desktop. Click on `Create Project` when ready.
 
 ![](images/directoryname.png)
 
 ### Step 4
 
-Verify that the project is created by looking at the top right corner of RStudio. Your project should have automatically opened and you will see the project name as "ENVX2001".
+Verify that the project is created by looking at the top right corner of RStudio. If you see your project name i.e. "ENVX2001", RStudio has recognised that 
 
 ![](images/projectcorner.png)
 
 ### Why did I create a project?
 
-- You have basically created a file, `ENVX2001.Rproj`, which now resides in the folder "ENVX2001".
-- When you open this file, RStudio will set the **working directory** to the folder that contains this `.Rproj` file.
-- We can import data easily when the working directory is identified. [See this link for more details](https://support.rstudio.com/hc/en-us/articles/200526207-Using-RStudio-Projects).
+1. You have basically created a file, `ENVX2001.Rproj`, which now resides in the folder "ENVX2001".
+2. When you open this file, RStudio will set the **working directory** to the folder that contains this `.Rproj` file.
+3. We can import data easily when the working directory is identified. [See this link for more details](https://support.rstudio.com/hc/en-us/articles/200526207-Using-RStudio-Projects).
 
 **It is recommended that you open the `.Rproj` file every time you work in the Labs, as it will make all data import code reproducible.**
 
 
-## Create an R Markdown file
+## R Markdown 
 
-In Module 1, we are testing a **new tutorial format** which should make learning in Labs more organised. 
-Labs are deployed through `learnr`, a special interactive document in R Markdown (like this file).
+ENVX2001 uses R Markdown extensively. At every Lab, you are expected to **create your own R Markdown file** to complete the Lab exercises. This section will quickly show you **how to create the document for your first Lab** in RStudio.
 
+
+### Step 1
+
+Click on `File` > `New File` > `R Markdown...` from the menu bar that is at the top of your screen (macOS) or the top of the RStudio windows (PC/Linux).
+
+### Step 2
+
+The default settings in this window can be changed later. Make sure that "HTML" is selected as the Default Output Format. Click OK.
+
+### Step 3
+
+Knit the file once the document is generated. This can be done by clicking on the Knit button, or by using the hotkey `cmd + shift + k` (macOS) or `ctrl + shift + k`. RStudio will prompt you to save the file. Give it a name (e.g. `Lab1`) and save it. The HTML document will preview automatically.
+
+*Note: if you are still in the ENVX2001 project, your file will automatically be saved in the working directory.*
+
+### Step 4
+
+Remove unnecessary text from the template by highlighting all the filler text and deleting them. The file is now ready for Lab 1.
+
+
+## Working with data
+
+### Load the `readr` package through the tidyverse
+This section will quickly show you how to **import** data for analysis. Before we begin, let's load the `tidyverse` package.
+
+```{r, echo=TRUE, eval=FALSE}
+library(tidyverse)
+```
+
+If you cannot load the package, perhaps it is not installed. Install the package by running the code below **in the Console window**:
+
+```{r, echo=TRUE, eval=FALSE}
+install.packages("tidyverse") # do NOT run in a code chunk
+```
+
+Remember, all `install.packages()` code should *always* be done in the console as there are special requirements to run the same code in an R Markdown code chunk.
+
+[image]
+
+### Sample data
+
+It is common for data to be stored in `.xlsx` (Excel) or `.csv` formats. 
