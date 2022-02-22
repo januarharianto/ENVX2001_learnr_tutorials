@@ -1,10 +1,7 @@
 channels:
   - conda-forge
 dependencies:
-  - r-base=4.1
+  - r-base=4.1.2
   - r-tidyverse
   - r-moments
-  - r-shinydashboard
   - r-learnr
-  - r-nycflights13
-  - r-Lahman
